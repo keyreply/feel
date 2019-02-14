@@ -60,7 +60,7 @@ describe("Internal tests...", function() {
     // var values = Object.values(excelSheetsJsonCsv);
     var values = Object.keys(excelSheetsJsonCsv).map(k => excelSheetsJsonCsv[k]);
     var decisionModelCsv = values[0];
-    debugger;
+    // debugger;
     var ctxObj = DTable._.makeContext(decisionModelCsv);
     var computedExpression = ctxObj.expression;
 

@@ -9,7 +9,7 @@ const chai = require('chai');
 const FEEL = require('../../dist/feel');
 
 const expect = chai.expect;
-debugger;
+// debugger;
 describe(chalk.blue('duration built-in function grammar test'), () => {
   it('should parse days and time duration', (done) => {
     const text = 'duration("P2DT20H14M").isDtd';

@@ -29,7 +29,7 @@ describe(chalk.yellow('Feel evaluation...'), function(){
       'Bankrupt' : false,
       'Credit Score': 600
     };
-    debugger;
+    // debugger;
     executeDecisionService(ast, 'Routing Rules', payload)
       .then(result => {
         expect({Routing: 'ACCEPT'}).to.not.deep.equal(result);
@@ -40,7 +40,7 @@ describe(chalk.yellow('Feel evaluation...'), function(){
 
   it('RoutingRules2.xlsx - old path', function(done){
     var DT = require('../../utils/helper/decision-table');
-    debugger;
+    // debugger;
     var decision_table = DT.xls_to_csv('test/data/RoutingRules2.xlsx');
     var payload = {
       'Post Bureau Risk Category' : 'MEIDUM',
@@ -91,7 +91,7 @@ describe(chalk.yellow('Feel evaluation...'), function(){
 
 
     var decisionAST = DS.createDecisionGraphAST(decisionMap);
-    debugger;
+    // debugger;
     DS.executeDecisionService(decisionAST, 'Routing', inputData).then( r => {
       // console.log(r);
       expect({Routing: 'ACCEPT'}).to.deep.equal(r);
@@ -160,7 +160,7 @@ describe(chalk.yellow('Feel evaluation...'), function(){
     var payload = {"Age" : 18, "Risk category" : "High", "Debt review" : false};
     var graph = createDecisionGraphAST(jsonFEEL);
   // console.log(jsonFEEL)
-    debugger;
+    // debugger;
     executeDecisionService(graph, 'Routing rules', payload).then(results => {
       // console.log(results)
       expect(results.length).to.equal(2);

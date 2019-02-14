@@ -54,7 +54,7 @@ describe('individual sheets...', function(){
       Customer: "Private",
       "Order size": 12
     };
-    debugger;
+    // debugger;
     runTest(path, 'Adjustments', payload).then(result => {
       expect(result.Shipping).to.equal('Air');
       expect(result.Discount).to.equal(0.05);
@@ -104,7 +104,7 @@ describe('individual sheets...', function(){
 
   it(`ElectricityBill.xlsx`, function(done) { //electricity bill
     var payload = { "State" : "Karnataka", "Units" : 31 };
-    debugger;
+    // debugger;
     runTest(path, 'Electricity Bill', payload)
     .then(results => {
       expect(results.Amount).to.equal(94.4);

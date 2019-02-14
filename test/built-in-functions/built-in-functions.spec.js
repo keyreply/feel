@@ -8,7 +8,7 @@ const chalk = require('chalk');
 const chai = require('chai');
 const FEEL = require('../../dist/feel');
 const fs = require('fs');
-var jsonData = require('D:/Repos/feel/test/built-in-functions/builtin.json')
+var jsonData = require('./builtin.json')
 const expect = chai.expect;
 
 describe(chalk.blue('built-in functions'), function() {
@@ -16,7 +16,7 @@ describe(chalk.blue('built-in functions'), function() {
   jsonData.forEach(function(data) {
     if(data.executionFlag == "yes"){
       it(`should ${data.description}, given ${data.group}`, function(done) {
-        debugger;
+        // debugger;
         try {
           var parsedGrammar = FEEL.parse(data.expression);
           parsedGrammar.build()

@@ -17,7 +17,7 @@ var DS = require('../../utils/helper/decision-service');
 describe(chalk.blue('Pegjs parsing tests...'), function(){
   it('should successfully parse a excel workbook - decision service', function()  {
     var file = 'test/data/RoutingDecisionService.xlsx';
-    debugger;
+    // debugger;
     var jsonFeel = DL.parseWorkbook(file);
 
     var keys = Object.keys(jsonFeel)
