@@ -78,7 +78,7 @@ const date = (...args) => {
     }
   } else if (args.length === 3 && isNumber(args)) {
     const [year, month, day] = args;
-    d = moment.tz({ year, month, day, hour: 0, minute: 0, second: 0 }, UTC);
+    d = moment.tz({ year, month: month - 1, day, hour: 0, minute: 0, second: 0 }, UTC);
     if (!d.isValid()) {
       throw new Error('Invalid date. Parsing error while attempting to create date from parts');
     }
