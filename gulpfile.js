@@ -74,7 +74,17 @@ gulp.task('generate:parser',['clean:dist:feel', 'concat:feel'], () => gulp.src('
 }))
 		.pipe(gulp.dest('./dist')));
 
-gulp.task('dist:feel:ast', ['clean:dist:feel:ast'], () => gulp.src('src/feel-ast.js')
+    gulp.task('generate:parser:trace', ['clean:dist:feel'], () => gulp.src('src/feel.pegjs')
+    .pipe(peg({
+      format: 'commonjs',
+      cache: true,
+      allowedStartRules: ["Start", "SimpleExpressions", "UnaryTests", "SimpleUnaryTests"],
+      trace: true
+    }))
+    .pipe(gulp.dest('./dist'))
+  );
+  
+  gulp.task('dist:feel:ast', ['clean:dist:feel:ast'], () => gulp.src('src/feel-ast.js')
 		.pipe(gulp.dest('./dist')));
 
 gulp.task('dist:feel:ast:parser', ['clean:dist:feel:ast'], () => gulp.src('src/feel-ast-parser.js')
@@ -152,3 +162,4 @@ gulp.task('watch', () => {
 });
 
 gulp.task('dist', ['build', 'dist:feel:ast', 'dist:feel:ast:parser', 'generate:parser']);
+gulp.task('dist:debug', ['build', 'dist:feel:ast', 'dist:feel:ast:parser', 'generate:parser:trace']);
