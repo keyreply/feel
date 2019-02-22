@@ -65,5 +65,8 @@
     "pegjs-backtrace": "^0.1.1",
     "pre-commit": "^1.2.2",
     "through2": "^2.0.3"
+  },
+  "resolutions": {
+    "natives": "1.1.3"
   }
 }
