@@ -2,7 +2,7 @@
     {
         "executionFlag": "yes",
         "group": "sematics of conversion functions-date(from)",
-        "expression": "date(\"2012-12-25\") – date(\"2012-12-24\") = duration(\"P1D\")",
+        "expression": "date(\"2012-12-25\") - date(\"2012-12-24\") = duration(\"P1D\")",
         "description": "convert from to a date"
     },
     {
@@ -20,7 +20,7 @@
     {
         "executionFlag": "yes",
         "group": "sematics of conversion functions-date and time(date, time)",
-        "expression": "date and time (\"2012-12-24T23:59:00\") = date and time (date(\"2012-12-24”), time(“T23:59:00\"))",
+        "expression": "date and time(\"2012-12-24T23:59:00\") = date and time(date(\"2012-12-24\"), time(\"T23:59:00\"))",
         "description": "creates a date time from the given date (ignoring any time component) and the given time"
     },
     {
@@ -44,7 +44,7 @@
     {
         "executionFlag": "yes",
         "group": "sematics of conversion functions-time(hour, minute, second, offset)",
-        "expression": "time(“T23:59:00z\") = time(23, 59, 0, duration(“PT0H”))",
+        "expression": "time(\"T23:59:00z\") = time(23, 59, 0, duration(\"PT0H\"))",
         "description": "creates a time from the given component values"
     },
     {
@@ -84,13 +84,13 @@
         "description": "return years and months duration between from and to"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of Boolean functions-not(negand)",
         "expression": "not(true) = false",
         "description": "logical negation"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of Boolean functions-not(negand)",
         "expression": "not(null) = null",
         "description": "logical negation"
@@ -246,109 +246,109 @@
         "description": "return arithmetic mean (average) of numbers"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-and(list)",
         "expression": "and([false,null,true]) = false",
         "description": "return false if any item is false, else true if all items are true, else null"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-and(b1,…, bN), N >1",
         "expression": "and(false,null,true) = false",
         "description": "return false if any item is false, else true if all items are true, else null"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-and(list)",
         "expression": "and([]) = true",
         "description": "return false if any item is false, else true if all items are true, else null"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-and(b1,…, bN), N >1",
         "expression": "and(0) = null",
         "description": "return false if any item is false, else true if all items are true, else null"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-or(list)",
         "expression": "or([false,null,true]) = true",
         "description": "return true if any item is true, else false if all items are false, else null"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-or(b1,…, bN), N >1",
         "expression": "or(false,null,true) = true",
         "description": "return true if any item is true, else false if all items are false, else null"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-or(list)",
         "expression": "or([]) = false",
         "description": "return true if any item is true, else false if all items are false, else null"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-or(b1,…, bN), N >1",
         "expression": "or(0) = null",
         "description": "return true if any item is true, else false if all items are false, else null"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-sublist(list, start position, length?)",
         "expression": "sublist([1,2,3], 1, 2) = [2]",
         "description": "return list of length (or all) elements of list, starting with list[start position]. 1st position is 1, last position is -1"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-append(list, item…)",
         "expression": "append([1], 2, 3) = [1,2,3]",
         "description": "return new list with items appended"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-concatenate(list…)",
         "expression": "concatenate([1,2],[3]) = [1,2,3]",
         "description": "return new list that is a concatenation of the arguments"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-insert before(list, position, newItem)",
         "expression": "insert before([1,3],1,2) = [1,2,3]",
         "description": "return new list with newItem inserted at position"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-remove(list, position)",
         "expression": "remove([1,2,3], 2) = [1,3]",
         "description": "list with item at position removed"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-reverse(list)",
         "expression": "reverse([1,2,3]) = [3,2,1]",
         "description": "reverse the list"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-index of(list, match)",
         "expression": "index of([1,2,3,2],2) = [2,4]",
         "description": "return ascending list of list positions containing match"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-union(list…)",
         "expression": "union([1,2],[2,3]) = [1,2,3]",
         "description": "concatenate with duplicate"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-distinct values(list)",
         "expression": "distinct values([1,2,3,2,1] = [1,2,3]",
         "description": "removal"
     },
     {
-        "executionFlag": "yes",
+        "executionFlag": "skip",
         "group": "semantics of list functions-flatten(list)",
         "expression": "flatten([[1,2],[[3]], 4]) = [1,2,3,4]",
         "description": "flatten nested lists"

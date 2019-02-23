@@ -15,13 +15,13 @@ describe(chalk.blue('built-in functions'), function() {
 
   jsonData.forEach(function(data) {
     if(data.executionFlag == "yes"){
-      it(`should ${data.description}, given ${data.group} - ${data.expression}`, function(done) {
-        debugger;
+      it(`should assert the following built-in function works properly - ${data.description}, (${data.group}) - ${data.expression}`, function(done) {
+        // debugger;
         try {
           var parsedGrammar = FEEL.parse(data.expression);
           parsedGrammar.build()
                 .then((result) => {
-                  expect(result).to.be.true;
+                  expect(result, `assertion failed: ${data.expression}`).to.be.true;
                   done();
                 }).catch((err) => {
                   done(err);

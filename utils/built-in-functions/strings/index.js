@@ -42,6 +42,13 @@ const matches = (text, pattern, flags) => {
   return rgx.test(text);
 };
 
+const string = (arg) => {
+  if (arg) {
+    return String(arg);
+  }
+  return null;
+};
+
 module.exports = {
   substring,
   'string length': stringLength,
@@ -54,4 +61,5 @@ module.exports = {
   'starts with': startsWith,
   'ends with': endsWith,
   matches,
+  string,
 };
