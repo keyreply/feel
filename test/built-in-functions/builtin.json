@@ -330,27 +330,27 @@
         "description": "reverse the list"
     },
     {
-        "executionFlag": "skip",
+        "executionFlag": "yes",
         "group": "semantics of list functions-index of(list, match)",
-        "expression": "index of([1,2,3,2],2) = [2,4]",
+        "expression": "every x in index of([1,2,3,2],2) satisfies list contains([2,4], x)",
         "description": "return ascending list of list positions containing match"
     },
     {
-        "executionFlag": "skip",
+        "executionFlag": "yes",
         "group": "semantics of list functions-union(list…)",
-        "expression": "union([1,2],[2,3]) = [1,2,3]",
+        "expression": "every x in union([1,2],[2,3]) satisfies list contains([1,2,3], x)",
         "description": "concatenate with duplicate"
     },
     {
-        "executionFlag": "skip",
+        "executionFlag": "yes",
         "group": "semantics of list functions-distinct values(list)",
-        "expression": "distinct values([1,2,3,2,1] = [1,2,3]",
+        "expression": "every x in distinct values([1,2,3,2,1]) satisfies list contains([1,2,3], x)",
         "description": "removal"
     },
     {
-        "executionFlag": "skip",
+        "executionFlag": "yes",
         "group": "semantics of list functions-flatten(list)",
-        "expression": "flatten([[1,2],[[3]], 4]) = [1,2,3,4]",
+        "expression": "every x in flatten([[1,2],[[3]], 4]) satisfies list contains([1,2,3,4], x)",
         "description": "flatten nested lists"
     },
     {

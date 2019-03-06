@@ -31,7 +31,7 @@ describe(chalk.blue('built-in functions'), function() {
         }
       });
     } else {
-      xit(`should ${data.description}, given ${data.group}`, function (done) {});
+      xit(`should ${data.description}, given ${data.group} - ${data.expression}`, function (done) {});
     }
     
       });
