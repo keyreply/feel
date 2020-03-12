@@ -368,7 +368,8 @@ module.exports = function (ast) {
 
       const processInBuiltFunction = fnMeta => this.params.build(args).then((values) => {
         if (Array.isArray(values)) {
-          return fnMeta(...[...values, args.context]);
+          // return fnMeta(...[...values, args.context]);
+          return fnMeta(...values);
         }
         log.debug(options, 'FunctionInvocationNode - Processing in-built function');
         return fnMeta(Object.assign({}, args.context, args.kwargs, { graphName: args.graphName, decisionMap: args.decisionMap }), values);

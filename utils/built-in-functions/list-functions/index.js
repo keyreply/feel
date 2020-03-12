@@ -22,35 +22,43 @@ const count = (list) => {
   }
 };
 
-const min = (list) => {
+const min = (...list) => {
   if (!Array.isArray(list)) {
     throw new Error('operation unsupported on element of this type');
   } else {
-    return _.min(list);
+    // make sure we have a flattened list here
+    const newList = _.flatten(list);
+    return _.min(newList);
   }
 };
 
-const max = (list) => {
+const max = (...list) => {
   if (!Array.isArray(list)) {
     throw new Error('operation unsupported on element of this type');
   } else {
-    return _.max(list);
+    // make sure we have a flattened list here
+    const newList = _.flatten(list);
+    return _.max(newList);
   }
 };
 
-const sum = (list) => {
+const sum = (...list) => {
   if (!Array.isArray(list)) {
     throw new Error('operation unsupported on element of this type');
   } else {
-    return _.sum(list);
+    // make sure we have a flattened list here
+    const newList = _.flatten(list);
+    return _.sum(newList);
   }
 };
 
-const mean = (list) => {
+const mean = (...list) => {
   if (!Array.isArray(list)) {
     throw new Error('operation unsupported on element of this type');
   } else {
-    return (_.sum(list)) / (list.length);
+    // make sure we have a flattened list here
+    const newList = _.flatten(list);
+    return (_.sum(newList)) / (newList.length);
   }
 };
 
@@ -126,10 +134,10 @@ const distinctValues = (list) => {
   }
 };
 
-const flatten = (...args) => _.flatten(args);
+const flatten = (...args) => _.flattenDeep(args);
 
 module.exports = {
-  listContains,
+  'list contains': listContains,
   count,
   min,
   max,
@@ -139,11 +147,11 @@ module.exports = {
   or,
   append,
   concatenate,
-  insertBefore,
+  'insert before': insertBefore,
   remove,
   reverse,
-  indexOf,
+  'index of': indexOf,
   union,
-  distinctValues,
+  'distinct values': distinctValues,
   flatten,
 };
