@@ -13,7 +13,7 @@ function gaussianRound(x) {
     return Math.round(absolute) * sign;
   }
   if (floored % 2 === 1) {
-      // Closest even is up.
+    // Closest even is up.
     return Math.ceil(absolute) * sign;
   }
   // Closest even is down.
@@ -23,16 +23,16 @@ function gaussianRound(x) {
 const decimal = (n, scale) => {
   if (scale > 0) {
     return Number.parseFloat(n.toFixed(scale));
-  } else if (scale === 0) {
+  } if (scale === 0) {
     return gaussianRound(n);
   }
 
   throw new Error(`Invalid argument given for scale:${scale}`);
 };
 
-const floor = n => Math.floor(n);
+const floor = (n) => Math.floor(n);
 
-const ceiling = n => Math.ceil(n);
+const ceiling = (n) => Math.ceil(n);
 
 const number = (text, groupingSeperator, decimalSeperator) => {
   let num = text.replace(groupingSeperator, '');
