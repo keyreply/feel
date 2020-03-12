@@ -95,7 +95,7 @@ describe(chalk.blue('Comparision expression ast parsing test'), function() {
     it('Successfully compare dates with ">"', function(done) {
         var text = 'date("2012-12-25") > date("2012-12-24")';
         var parsedGrammar = FEEL.parse(text);
-        debugger;
+        // debugger;
         parsedGrammar.build().then(result => {
             expect(result).to.be.true;
             done();

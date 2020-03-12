@@ -12,7 +12,7 @@ const expect = chai.expect;
 
 describe(chalk.blue('misc date-and-time related tests...'), () => {
   it('should subtract months from last day of month correctly', (done) => {
-    debugger;
+    // debugger;
     const text = 'date(date("2018-07-31") - duration("P1M")) = date("2018-06-30")';
     try {
       const parsedGrammar = FEEL.parse(text);

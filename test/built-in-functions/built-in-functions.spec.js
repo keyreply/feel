@@ -11,28 +11,27 @@ const fs = require('fs');
 var jsonData = require('./builtin.json')
 const expect = chai.expect;
 
-describe(chalk.blue('built-in functions'), function() {
+describe(chalk.blue('built-in functions'), function () {
 
-  jsonData.forEach(function(data) {
-    if(data.executionFlag == "yes"){
-      it(`should assert the following built-in function works properly - ${data.description}, (${data.group}) - ${data.expression}`, function(done) {
+  jsonData.forEach(function (data) {
+    if (data.executionFlag == "yes") {
+      it(`should assert the following built-in function works properly - ${data.description}, (${data.group}) - ${data.expression}`, function (done) {
         // debugger;
         try {
           var parsedGrammar = FEEL.parse(data.expression);
           parsedGrammar.build()
-                .then((result) => {
-                  expect(result, `assertion failed: ${data.expression}`).to.be.true;
-                  done();
-                }).catch((err) => {
-                  done(err);
-                });
+            .then((result) => {
+              expect(result, `assertion failed: ${data.expression}`).to.be.true;
+              done();
+            }).catch((err) => {
+              done(err);
+            });
         } catch (err) {
           done(err);
         }
       });
     } else {
-      xit(`should ${data.description}, given ${data.group} - ${data.expression}`, function (done) {});
+      xit(`should ${data.description}, given ${data.group} - ${data.expression}`, function (done) { });
     }
-    
-      });
-    });
+  });
+});
